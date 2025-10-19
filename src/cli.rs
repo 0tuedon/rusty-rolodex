@@ -1,6 +1,6 @@
-pub mod cli {
+pub mod command_line {
+    use crate::{store::Contact, validation::is_email_valid};
     use std::io;
-    use crate::{store::store::Contact, validation::is_email_valid};
 
     pub enum Commands {
         Add,
@@ -9,7 +9,7 @@ pub mod cli {
         Exit,
     }
 
-   pub fn execute_command(cmd: Commands, contacts_vec: &mut Vec<Contact>) {
+    pub fn execute_command(cmd: Commands, contacts_vec: &mut Vec<Contact>) {
         match cmd {
             Commands::Add => {
                 let mut current_contact = Contact {
@@ -80,7 +80,7 @@ pub mod cli {
                         }
                     }
                 }
-                    contacts_vec.push(current_contact);
+                contacts_vec.push(current_contact);
             }
 
             Commands::Delete => {
@@ -101,4 +101,4 @@ pub mod cli {
     }
 }
 
-pub use cli::Commands;
+pub use command_line::Commands;

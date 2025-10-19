@@ -1,8 +1,8 @@
+use rusty_rolodex::cli::command_line::execute_command;
+use rusty_rolodex::cli::Commands;
+use rusty_rolodex::store::Contact;
+use rusty_rolodex::validation::parse_input;
 use std::io;
-use rusty_rolodex::cli::cli::execute_command;
-use rusty_rolodex::cli::{Commands};
-use rusty_rolodex::store::store::Contact;
-use rusty_rolodex::validation::{parse_input};
 
 fn main() {
     let mut contacts_vec: Vec<Contact> = Vec::new();
