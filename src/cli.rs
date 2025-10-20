@@ -2,6 +2,7 @@ pub mod command_line {
     use crate::{store::Contact, validation::is_email_valid};
     use std::io;
 
+    #[derive(Debug,  PartialEq)]
     pub enum Commands {
         Add,
         List,
